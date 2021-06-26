@@ -1,8 +1,10 @@
 import readlineSync from 'readline-sync';
-import { welcomeUser } from './cli.js';
 
-export const brainEven = (name) => {
-  welcomeUser(name);
+export const brainEvenLogic = () => {
+  console.log('Welcome to the Brain Games!');
+  const name = readlineSync.question('May I have your name? ');
+  console.log(`Hello ${name}`);
+
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
 
   for (let i = 0; i < 3; i += 1) {
@@ -21,4 +23,4 @@ export const brainEven = (name) => {
   return console.log(`Congratulations, ${name}!`);
 };
 
-export default brainEven;
+export default brainEvenLogic;
