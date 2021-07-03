@@ -1,3 +1,4 @@
 #!/usr/bin/env node
-import { brainEvenLogic } from '../src/belogic.js';
-brainEvenLogic();
+import { brainEven } from '../src/brain-even.js';
+
+brainEven();
