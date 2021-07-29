@@ -1,8 +1,7 @@
-import engine from "../index.js";
-
+import engine from '../index.js';
 
 export const brainCalculatorLogic = () => {
-  const gameInfo ='Whats is the result of the expression?';
+  const gameInfo = 'Whats is the result of the expression?';
   let question = '';
   let trueAnswer = 0;
   for (let i = 0; i < 3; i += 1) {
@@ -20,7 +19,6 @@ export const brainCalculatorLogic = () => {
       trueAnswer = firstRandomNumber * secondRandomNumber;
     }
   }
-  return [question, trueAnswer, gameInfo]
+  return [question, trueAnswer, gameInfo];
 };
-export const brainCalculator = () => engine(brainCalculatorLogic)
-export default brainCalculator;
+export const brainCalculator = () => engine(brainCalculatorLogic);
