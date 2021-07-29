@@ -10,7 +10,7 @@ const engine = (game) => {
     const [question, trueAnswer] = game();
     console.log(`Question: ${question}`);
     const answer = readlineSync.question('Your answer: ');
-    if (Number(answer) === trueAnswer) {
+    if (answer === trueAnswer) {
       console.log('Correct!');
     } else {
       return console.log(`'${answer}' is wrong answer ;(. Correct answer was '${trueAnswer}'.\nLet's try again, ${name}!`);

@@ -14,6 +14,7 @@ export const brainGcdLogic = () => {
       commonDivisor = j;
     }
   }
+  commonDivisor = String(commonDivisor);
   return [braingcdQuestion, commonDivisor, gameInfo];
 };
 

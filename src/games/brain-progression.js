@@ -12,7 +12,7 @@ export const brainProgressionLogic = () => {
   const points = randomArr.length - Math.floor(Math.random() * ((randomArr.length - 1) - 0) + 0);
   randomArr[points] = '..';
   const progressionQuestion = randomArr.join(' ');
-  const trueAnswer = randomArr[points - 1] + progressionStep;
+  const trueAnswer = String(randomArr[points - 1] + progressionStep);
 
   return [progressionQuestion, trueAnswer, gameInfo];
 };

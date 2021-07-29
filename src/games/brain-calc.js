@@ -19,6 +19,7 @@ export const brainCalculatorLogic = () => {
       trueAnswer = firstRandomNumber * secondRandomNumber;
     }
   }
+  trueAnswer = String(trueAnswer);
   return [question, trueAnswer, gameInfo];
 };
 export const brainCalculator = () => engine(brainCalculatorLogic);
