@@ -1,17 +1,18 @@
 import engine from '../index.js';
+import randomNumber from './random-number.js';
 
-export const brainPrimeLogic = () => {
-  const gameInfo = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-  const randomNumber = Math.floor(Math.random() * (100 - 1) + 1);
+const gameInfo = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+
+const isPrime = (number) => (number > 1 ? 'no' : 'yes');
+export const calculateValues = () => {
+  const num = randomNumber();
   let count = 0;
-  for (let j = 0; j < randomNumber; j += 1) {
-    if (randomNumber % j === 0) {
+  for (let j = 0; j < num; j += 1) {
+    if (num % j === 0) {
       count += 1;
     }
   }
-  const isPrime = count > 1 ? 'no' : 'yes';
-
-  return [randomNumber, isPrime, gameInfo];
+  return [num, isPrime(count)];
 };
 
-export const brainPrime = () => engine(brainPrimeLogic);
+export const brainPrime = () => engine(calculateValues, gameInfo);

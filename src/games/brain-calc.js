@@ -1,25 +1,30 @@
 import engine from '../index.js';
+import randomNumber from './random-number.js';
 
-export const brainCalculatorLogic = () => {
-  const gameInfo = 'Whats is the result of the expression?';
-  let question = '';
-  let trueAnswer = 0;
-  for (let i = 0; i < 3; i += 1) {
-    const firstRandomNumber = Math.floor(Math.random() * 100);
-    const secondRandomNumber = Math.floor(Math.random() * 100);
-    const randomOperator = Math.floor(Math.random() * 10);
-    if (randomOperator < 3) {
-      question = `${firstRandomNumber} + ${secondRandomNumber}`;
-      trueAnswer = firstRandomNumber + secondRandomNumber;
-    } else if (randomOperator < 6) {
-      question = `${firstRandomNumber} - ${secondRandomNumber}`;
-      trueAnswer = firstRandomNumber - secondRandomNumber;
-    } else {
-      question = `${firstRandomNumber} * ${secondRandomNumber}`;
-      trueAnswer = firstRandomNumber * secondRandomNumber;
-    }
+export const gameInfo = 'Whats is the result of the expression?';
+
+const calculateResult = (r, x, y) => {
+  if (r < 3.3) {
+    return x + y;
+  } if (r < 6.6) {
+    return x - y;
   }
-  trueAnswer = String(trueAnswer);
-  return [question, trueAnswer, gameInfo];
+  return x * y;
 };
-export const brainCalculator = () => engine(brainCalculatorLogic);
+
+export const calculateValues = () => {
+  let question = '';
+  const x = randomNumber();
+  const y = randomNumber();
+  const randomOperator = randomNumber() / 10;
+  if (randomOperator < 3.3) {
+    question = `${x} + ${y}`;
+  } else if (randomOperator < 6.6) {
+    question = `${x} - ${y}`;
+  } else {
+    question = `${x} * ${y}`;
+  }
+  const trueAnswer = String(calculateResult(randomOperator, x, y));
+  return [question, trueAnswer];
+};
+export const brainCalculator = () => engine(calculateValues, gameInfo);
