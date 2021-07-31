@@ -3,7 +3,6 @@ import randomNumber from './random-number.js';
 
 const gameInfo = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-
 export const calculateValues = () => {
   const num = randomNumber();
   let count = 0;
