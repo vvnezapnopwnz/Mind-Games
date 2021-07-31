@@ -5,7 +5,7 @@ export const calculateValues = () => {
   const num = Math.floor(Math.random() * (100 - 1) + 1);
   let count = 0;
   for (let j = 0; j < num; j += 1) {
-    if (num % j === 0) {
+    if (num % j === 0 && num >= 2) {
       count += 1;
     }
   }
