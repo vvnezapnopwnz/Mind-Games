@@ -7,7 +7,7 @@ export const calculateValues = () => {
   const num = randomNumber();
   let count = 0;
   for (let j = 0; j < num; j += 1) {
-    if (num % j === 0 && num !== 1) {
+    if (num % j === 0 && num <= 1) {
       count += 1;
     }
   }
