@@ -1,34 +1,3 @@
-// import engine from '../index.js';
-// import randomNumber from '../utilities.js';
-
-// export const gameInfo = 'Whats is the result of the expression?';
-
-// const calculateResult = (r, x, y) => {
-//   if (r < 3.3) {
-//     return x + y;
-//   } if (r < 6.6) {
-//     return x - y;
-//   }
-//   return x * y;
-// };
-
-// export const calculateValues = () => {
-//   let question = '';
-//   const x = randomNumber(100, 1);
-//   const y = randomNumber(100, 1);
-//   const randomOperator = randomNumber(11, 1);
-//   if (randomOperator < 3.3) {
-//     question = `${x} + ${y}`;
-//   } else if (randomOperator < 6.6) {
-//     question = `${x} - ${y}`;
-//   } else {
-//     question = `${x} * ${y}`;
-//   }
-//   const trueAnswer = String(calculateResult(randomOperator, x, y));
-//   return [question, trueAnswer];
-// };
-// export const brainCalculator = () => engine(calculateValues, gameInfo);
-
 import engine from '../index.js';
 import randomNumber from '../utilities.js';
 
