@@ -3,9 +3,9 @@ import randomNumber from '../utilities.js';
 
 export const gameInfo = 'Whats is the result of the expression?';
 
-const calculateResult = (r, num1, num2) => {
+const calculateResult = (operator, num1, num2) => {
   let result = 0;
-  switch (r) {
+  switch (operator) {
     case '*':
       result = num1 * num2;
       break;
