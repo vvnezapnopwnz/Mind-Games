@@ -5,4 +5,3 @@ const welcomeUser = () => {
   console.log(`Hello, ${name}!`);
 };
 export default welcomeUser;
-// возврат имени нужен в случае вывода поздравления

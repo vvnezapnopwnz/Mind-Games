@@ -1,24 +1,31 @@
 import engine from '../index.js';
+import randomNumber from '../utilities.js';
 
 const gameInfo = 'What number is missing in the progression?';
 
-const createArr = (x, y, p) => {
-  const arr = [];
-  for (let j = x; arr.length < y; j += p) {
-    arr.push(j);
+const createProgression = (start, length, step) => {
+  const progressionArray = [];
+  for (let i = start; progressionArray.length < length; i += step) {
+    progressionArray.push(i);
   }
-  return arr;
+  return progressionArray;
 };
-export const calcValues = () => {
-  const progressionLength = Math.floor(Math.random() * (11 - 5) + 5);
-  const startPoint = Math.floor(Math.random() * (100 - 1) + 1);
-  const progressionStep = Math.floor(Math.random() * 10);
-  const x = createArr(startPoint, progressionLength, progressionStep);
-  const points = x.length - Math.floor(Math.random() * ((x.length - 1) - 0) + 0);
-  x[points] = '..';
-  const progressionQuestion = x.join(' ');
-  const trueAnswer = String(x[points - 1] + progressionStep);
 
+const getHiddenProgression = (start, length, step, getRandom) => {
+  const hiddenProgression = createProgression(start, length, step);
+  const points = getRandom;
+  hiddenProgression[points] = '..';
+  return hiddenProgression.join(' ');
+};
+
+export const calcValues = () => {
+  const length = randomNumber(11, 5);
+  const start = randomNumber(100, 1);
+  const step = randomNumber(11, 1);
+  const getRandom = length - randomNumber(length, 0);
+
+  const progressionQuestion = getHiddenProgression(start, length, step, getRandom);
+  const trueAnswer = String(start + step * getRandom);
   return [progressionQuestion, trueAnswer];
 };
 
