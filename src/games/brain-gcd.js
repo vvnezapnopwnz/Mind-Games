@@ -15,8 +15,8 @@ const calculateDevisor = (first, second) => {
 };
 
 export const calculateValues = () => {
-  const first = randomNumber(100, 1);
-  const second = randomNumber(100, 1);
+  const first = randomNumber(1, 100);
+  const second = randomNumber(1, 100);
   const question = `${first} ${second}`;
   const answer = String(calculateDevisor(first, second));
   return [question, answer];

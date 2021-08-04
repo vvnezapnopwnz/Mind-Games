@@ -17,12 +17,12 @@ const calculateResult = (operator, num1, num2) => {
 };
 
 export const calculateValues = () => {
-  const operatorsStr = '+-*';
-  const num1 = randomNumber(100, 1);
-  const num2 = randomNumber(100, 1);
-  const getRandomOperator = randomNumber(2, 0);
-  const question = `${num1} ${operatorsStr[getRandomOperator]} ${num2}`;
-  const answer = String(calculateResult(operatorsStr[getRandomOperator], num1, num2));
+  const operators = '+-*';
+  const num1 = randomNumber(1, 100);
+  const num2 = randomNumber(1, 100);
+  const getRandom = randomNumber(0, 2);
+  const question = `${num1} ${operators[getRandom]} ${num2}`;
+  const answer = String(calculateResult(operators[getRandom], num1, num2));
   return [question, answer];
 };
 export const brainCalculator = () => engine(calculateValues, gameInfo);

@@ -14,7 +14,7 @@ const isPrime = (question) => {
 };
 
 export const calculateValues = () => {
-  const question = randomNumber(100, 1);
+  const question = randomNumber(1, 100);
   const answer = isPrime(question) ? 'yes' : 'no';
   return [question, answer];
 };
