@@ -7,7 +7,7 @@ const isEven = (question) => (question % 2 === 0);
 
 export const calculateValues = () => {
   const question = randomNumber(100, 1);
-  const trueAnswer = isEven(question) ? 'yes' : 'no';
-  return [question, trueAnswer];
+  const answer = isEven(question) ? 'yes' : 'no';
+  return [question, answer];
 };
 export const brainEven = () => engine(calculateValues, gameInfo);
