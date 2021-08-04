@@ -4,6 +4,25 @@
 ## Mind Games
 Mind Games is a set of five console games, built on the principle of popular mobile brain training applications. Each game asks questions that need to be answered correctly. After three correct answers, the game is considered to be completed. Wrong answers end the game and offer to play it again.
 ### Usage
+The first step is to make sure you have the latest version of Node.js installed.
+```bash
+node -v
+```
+Install the dependencies in the local node_modules folder.
+```bash
+npm install
+```
+Add executable permissions to bin/<game name>.js by running 
+```bash
+chmod + x bin/<game name>.js 
+```
+in the root directory of the project. This will allow you to run the executable file directly from the console without specifying the interpreter (node). **The list of game names is presented below.**
+
+Use the npm link command. It must be run from the root directory of the project.
+```bash
+npm link
+```
+
 Use command line to launch the selected game.
 ##### Calculator
 Arithmetic expressions to be evaluated.
