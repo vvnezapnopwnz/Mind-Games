@@ -4,30 +4,25 @@ import randomNumber from '../utilities.js';
 export const gameInfo = 'Whats is the result of the expression?';
 
 const calculateResult = (operator, num1, num2) => {
-  let result = 0;
   switch (operator) {
-    case '*':
-      result = num1 * num2;
-      break;
-    case '-':
-      result = num1 - num2;
-      break;
     case '+':
-      result = num1 + num2;
-      break;
+      return num1 + num2;
+    case '-':
+      return num1 - num2;
+    case '*':
+      return num1 * num2;
     default:
-      break;
+      throw Error('No such operator.');
   }
-  return result;
 };
 
 export const calculateValues = () => {
   const operatorsStr = '+-*';
   const num1 = randomNumber(100, 1);
   const num2 = randomNumber(100, 1);
-  const getRandomOperator = randomNumber(3, 0);
+  const getRandomOperator = randomNumber(2, 0);
   const question = `${num1} ${operatorsStr[getRandomOperator]} ${num2}`;
-  const trueAnswer = String(calculateResult(operatorsStr[getRandomOperator], num1, num2));
-  return [question, trueAnswer];
+  const answer = String(calculateResult(operatorsStr[getRandomOperator], num1, num2));
+  return [question, answer];
 };
 export const brainCalculator = () => engine(calculateValues, gameInfo);

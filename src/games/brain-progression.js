@@ -11,8 +11,8 @@ const createProgression = (start, length, step) => {
   return progressionArray;
 };
 
-const getHiddenProgression = (start, length, step, getRandom) => {
-  const hiddenProgression = createProgression(start, length, step);
+const getHiddenProgression = (progressionData, getRandom) => {
+  const hiddenProgression = createProgression(...progressionData);
   const points = getRandom;
   hiddenProgression[points] = '..';
   return hiddenProgression.join(' ');
@@ -22,11 +22,12 @@ export const calculateValues = () => {
   const length = randomNumber(11, 5);
   const start = randomNumber(100, 1);
   const step = randomNumber(11, 1);
+  const progressionData = [start, length, step];
   const getRandom = length - randomNumber(length, 0);
 
-  const progressionQuestion = getHiddenProgression(start, length, step, getRandom);
-  const trueAnswer = String(start + step * getRandom);
-  return [progressionQuestion, trueAnswer];
+  const question = getHiddenProgression(progressionData, getRandom);
+  const answer = String(start + step * getRandom);
+  return [question, answer];
 };
 
 export const brainProgression = () => engine(calculateValues, gameInfo);

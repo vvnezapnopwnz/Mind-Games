@@ -3,10 +3,10 @@ import randomNumber from '../utilities.js';
 
 const gameInfo = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-const isPrime = (num) => {
+const isPrime = (question) => {
   let result = true;
-  for (let i = 2; i < num - 1; i += 1) {
-    if (num % i === 0 && num >= 2) {
+  for (let i = 2; i < question - 1; i += 1) {
+    if (question % i === 0 && question >= 2) {
       result = false;
     }
   }
@@ -14,9 +14,9 @@ const isPrime = (num) => {
 };
 
 export const calculateValues = () => {
-  const num = randomNumber(100, 1);
-  const trueAnswer = isPrime(num) ? 'yes' : 'no';
-  return [num, trueAnswer];
+  const question = randomNumber(100, 1);
+  const answer = isPrime(question) ? 'yes' : 'no';
+  return [question, answer];
 };
 
 export const brainPrime = () => engine(calculateValues, gameInfo);
