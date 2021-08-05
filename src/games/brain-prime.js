@@ -4,7 +4,7 @@ import randomNumber from '../utilities.js';
 const gameInfo = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const isPrime = (question) => {
-  let result = true;
+  let result = !(question <= 1);
   for (let i = 2; i < question - 1; i += 1) {
     if (question % i === 0 && question >= 2) {
       result = false;
