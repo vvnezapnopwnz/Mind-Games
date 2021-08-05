@@ -3,10 +3,10 @@ import randomNumber from '../utilities.js';
 
 const gameInfo = 'What number is missing in the progression?';
 
-const getHiddenProgression = (progressionData, getRandom) => {
+const getHiddenProgression = (progressionData, hiddenIndex) => {
   const points = '..';
   const progression = progressionData;
-  progression[getRandom] = points;
+  progression[hiddenIndex] = points;
   return progression.join(' ');
 };
 
@@ -18,10 +18,10 @@ export const calculateValues = () => {
   for (let i = start; progressionData.length < length; i += step) {
     progressionData.push(i);
   }
-  const getRandom = length - randomNumber(length, 0);
+  const hiddenIndex = length - randomNumber(0, length);
 
-  const question = getHiddenProgression(progressionData, getRandom);
-  const answer = String(start + step * getRandom);
+  const question = getHiddenProgression(progressionData, hiddenIndex);
+  const answer = String(start + step * hiddenIndex);
   return [question, answer];
 };
 
