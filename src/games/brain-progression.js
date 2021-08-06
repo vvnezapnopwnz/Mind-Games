@@ -1,4 +1,4 @@
-import engine from '../index.js';
+import launch from '../index.js';
 import randomNumber from '../utilities.js';
 
 const gameInfo = 'What number is missing in the progression?';
@@ -25,4 +25,4 @@ export const calculateValues = () => {
   return [question, answer];
 };
 
-export const brainProgression = () => engine(calculateValues, gameInfo);
+export const brainProgression = () => launch(calculateValues, gameInfo);

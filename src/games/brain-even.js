@@ -1,4 +1,4 @@
-import engine from '../index.js';
+import launch from '../index.js';
 import randomNumber from '../utilities.js';
 
 const gameInfo = 'Answer "yes" if the number is even, otherwise answer "no".';
@@ -10,4 +10,4 @@ export const calculateValues = () => {
   const answer = isEven(question) ? 'yes' : 'no';
   return [question, answer];
 };
-export const brainEven = () => engine(calculateValues, gameInfo);
+export const brainEven = () => launch(calculateValues, gameInfo);
