@@ -20,9 +20,9 @@ export const calculateValues = () => {
   const operators = '+-*';
   const num1 = randomNumber(1, 100);
   const num2 = randomNumber(1, 100);
-  const getRandom = randomNumber(0, 2);
-  const question = `${num1} ${operators[getRandom]} ${num2}`;
-  const answer = String(calculateResult(operators[getRandom], num1, num2));
+  const random = randomNumber(0, 2);
+  const question = `${num1} ${operators[random]} ${num2}`;
+  const answer = String(calculateResult(operators[random], num1, num2));
   return [question, answer];
 };
 export const brainCalculator = () => engine(calculateValues, gameInfo);
